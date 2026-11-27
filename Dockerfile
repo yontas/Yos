@@ -19,7 +19,6 @@ ENV NODE_ENV=production \
 RUN NODE_OPTIONS="--max-old-space-size=1536" npm run build \
   && mkdir -p /app/data/servers
 
-VOLUME ["/app/data"]
 EXPOSE 3000
 
 CMD ["sh", "-c", "npm run start -- -p ${PORT:-3000} -H 0.0.0.0"]
